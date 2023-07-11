@@ -1,0 +1,258 @@
+*{
+    box-sizing:border-box;
+}
+.container{
+    position: relative;
+    width: 1000px;
+    margin: auto;
+}
+.game-info{
+    display: flex;
+}
+.name-game{
+flex: 1;
+font-size: 25px;
+font-weight: bold;
+color: black;
+margin: 5px 0 5px 5px;
+}
+.gategory-name{
+    flex: 1;
+    text-align: right;
+    display: inline-block;
+    font-weight: bold;
+    font-size: large;
+}
+.gategory-name .name{
+    margin: 5px 0 ;
+    font-weight: bold;
+    font-size: medium;
+    color: orange;
+    display: inline;
+}
+hr
+{
+    width: 100%;
+    height: 4px;
+    background-color: white;
+}
+.row
+{
+    display: flex;
+
+}
+.row .draw{
+    flex: 1;
+    height: 250px;
+    position: relative;
+    margin-right: 5px;
+}
+.draw .draw-base{
+    position: absolute;
+    width: 50px;
+    border-bottom: 4px solid black;
+    top: calc(100% - 4px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+.draw .draw-stand{
+    position: absolute;
+    height: 75%;
+    width: 4px;
+    background-color: black;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+.draw .draw-stand::before{
+    content: "";
+    width: 80px;
+    height: 4px;
+    position: absolute;
+    background-color: black;
+    display: none;
+}
+.draw .draw-stand::after{
+    content: "";
+    width: 4px;
+    height: 40px;
+    position: absolute;
+    left: 80px;
+    background-color: black;
+    display: none;
+}
+.draw .draw-hang{
+    position: absolute;
+    top: 100px;
+    left: 308px ;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px dashed black;
+    display: none;
+}
+.draw .draw-man{
+    position: relative;
+    top: 100px;
+    left: 280px ;
+    width: 100px;
+    height: 80px;
+}
+.draw .draw-man .head{
+    position: absolute;
+    top: 5px;
+    left: 33%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 4px solid black;
+    display: none;
+}
+.draw .draw-man .body{
+    position: absolute;
+    top: 32px;
+    left: 45%;
+    height: 60px;
+    width: 4px;
+    background-color: black;
+    display: none;
+}
+
+.draw .draw-man .hands::before{
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 56%;
+    width: 4px;
+    height: 30px;
+    background-color: black;
+    transform: rotate(300deg);
+    display: none;
+}
+.draw .draw-man .hands::after{
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 33%;
+    width: 4px;
+    height: 30px;
+    background-color: black;
+    transform: rotate(-300deg);
+    display: none;
+    }
+.draw .draw-man .legs::before{
+    content: "";
+    position: absolute;
+    top: 102%;
+    left: 56%;
+    width: 4px;
+    height: 30px;
+    background-color: black;
+    transform: rotate(300deg);
+    display: none;
+}
+.draw .draw-man .legs::after{
+    content: "";
+    position: absolute;
+    top: 102%;
+    left: 33%;
+    width: 4px;
+    height: 30px;
+    background-color: black;
+    transform: rotate(-300deg);
+    display: none;
+}
+.draw.wrong-1 .draw-stand{
+display: block;
+}
+.draw.wrong-2 .draw-stand::before{
+display: block;
+}
+.draw.wrong-3 .draw-stand::after{
+display: block;
+}
+.draw.wrong-4 .draw-hang{
+display: block;
+}
+.draw.wrong-5 .head{
+display: block;
+}
+.draw.wrong-6 .body{
+display: block;
+}
+.draw.wrong-7 .hands::before,
+.draw.wrong-7 .hands::after{
+display: block;
+}
+.draw.wrong-8 .legs::before,
+.draw.wrong-8 .legs::after{
+display: block;
+}
+.row .letters{
+    flex: 1;
+    text-align: center;
+}
+.row .letters.finished{
+    pointer-events: none;
+}
+.row .letters .con-let{
+    background-color: aqua;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 25;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+.row .letters .con-let.clicked{
+    opacity: .3;
+    pointer-events: none;
+}
+.span-letter{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.span-letter .span-let{
+    width: 50px;
+    height: 50px;
+    display: inline;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    border-bottom: 4px solid black;
+}
+.span-letter .span-let.with-spase{
+    background-color: none;
+    border-bottom: none;
+    position: relative;
+}
+.span-letter .span-let.with-spase::before{
+content: "";
+position: absolute;
+top: 50%;
+left: 50%;
+width: 10px;
+height: 4px;
+margin-left: -2px;
+background-color: black;
+}
+.popup{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    margin: auto;
+    background-color: aqua;
+    text-align: center;
+    font-size: 40px;
+    line-height: 350px;
+}
